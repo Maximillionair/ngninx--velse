@@ -1,0 +1,160 @@
+/* Grunnleggende stiler */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #3498db;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Header */
+  header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+  }
+  
+  header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  header nav ul li {
+    margin-right: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+  }
+  
+  /* Main innhold */
+  main {
+    min-height: calc(100vh - 200px);
+    padding: 20px 0;
+  }
+  
+  .welcome {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  
+  .task-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .task-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border-top: 5px solid #3498db;
+  }
+  
+  .task-card.easy {
+    border-top-color: #2ecc71;
+  }
+  
+  .task-card.medium {
+    border-top-color: #f39c12;
+  }
+  
+  .task-card.hard {
+    border-top-color: #e74c3c;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .task-details {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .task-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+  }
+  
+  .task-header.easy {
+    border-bottom-color: #2ecc71;
+  }
+  
+  .task-header.medium {
+    border-bottom-color: #f39c12;
+  }
+  
+  .task-header.hard {
+    border-bottom-color: #e74c3c;
+  }
+  
+  .learning-section, .task-description, .evaluation-criteria {
+    margin-bottom: 20px;
+  }
+  
+  .evaluation-criteria ul {
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Responsivt design */
+  @media (max-width: 768px) {
+    header nav ul {
+      flex-direction: column;
+    }
+    
+    header nav ul li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    .task-cards {
+      grid-template-columns: 1fr;
+    }
+  }

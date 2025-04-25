@@ -1,0 +1,40 @@
+<div class="task-details">
+    <header class="task-header medium">
+        <h2><%= task.title %></h2>
+        <p class="subtitle"><%= task.subtitle %></p>
+    </header>
+    
+    <section class="learning-section">
+        <h3>Læringsmål</h3>
+        <p><%= task.learning_goals %></p>
+        
+        <h3>Hensikt med oppgaven</h3>
+        <p><%= task.purpose %></p>
+        
+        <h3>Læringsutbytte</h3>
+        <p><%= task.learning_outcome %></p>
+        
+        <h3>Personlig læring fra oppgaveutvikling</h3>
+        <p><%= task.personal_learning %></p>
+    </section>
+    
+    <section class="task-description">
+        <h3>Oppgavebeskrivelse</h3>
+        <p><%= task.description %></p>
+        
+        <div class="task-content">
+            <%- task.content %>
+        </div>
+    </section>
+    
+    <section class="evaluation-criteria">
+        <h3>Vurderingskriterier</h3>
+        <ul>
+            <% task.criteria.forEach(criterion => { %>
+                <li><%= criterion %></li>
+            <% }); %>
+        </ul>
+    </section>
+    
+    <a href="/" class="btn back-btn">Tilbake til forsiden</a>
+</div>
