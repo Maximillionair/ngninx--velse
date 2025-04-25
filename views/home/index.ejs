@@ -1,31 +1,35 @@
-<section class="welcome">
-    <h2>Velkommen til oppgaveportalen</h2>
-    <p>Her finner du tre oppgaver med ulik vanskelighetsgrad innen IKT-fagene.</p>
-</section>
-
-<section class="task-overview">
-    <h3>Tilgjengelige oppgaver:</h3>
+<%- include('partials/header') %>
+    <section class="welcome">
+        <h2>Velkommen til oppgaveportalen</h2>
+        <p>Her finner du tre oppgaver med ulik vanskelighetsgrad innen IKT-fagene.</p>
+    </section>
     
-    <div class="task-cards">
-        <div class="task-card easy">
-            <h4><%= tasks.easy.title %></h4>
-            <p class="subtitle"><%= tasks.easy.subtitle %></p>
-            <p><%= tasks.easy.learning_goals %></p>
-            <a href="/tasks/easy" class="btn">Vis oppgave</a>
-        </div>
+    <section class="task-overview">
+        <h3>Tilgjengelige oppgaver:</h3>
         
-        <div class="task-card medium">
-            <h4><%= tasks.medium.title %></h4>
-            <p class="subtitle"><%= tasks.medium.subtitle %></p>
-            <p><%= tasks.medium.learning_goals %></p>
-            <a href="/tasks/medium" class="btn">Vis oppgave</a>
+        <div class="task-cards">
+            <div class="task-card easy">
+                <h4><%= tasks.easy.title %></h4>
+                <p class="subtitle"><%= tasks.easy.subtitle %></p>
+                <p><%= tasks.easy.learning_goals %></p>
+                <a href="/tasks/easy" class="btn">Vis oppgave</a>
+            </div>
+            
+            <div class="task-card medium">
+                <h4><%= tasks.medium.title %></h4>
+                <p class="subtitle"><%= tasks.medium.subtitle %></p>
+                <p><%= tasks.medium.learning_goals %></p>
+                <a href="/tasks/medium" class="btn">Vis oppgave</a>
+            </div>
+            
+            <div class="task-card hard">
+                <h4><%= tasks.hard.title %></h4>
+                <p class="subtitle"><%= tasks.hard.subtitle %></p>
+                <p><%= tasks.hard.learning_goals %></p>
+                <a href="/tasks/hard" class="btn">Vis oppgave</a>
+            </div>
         </div>
-        
-        <div class="task-card hard">
-            <h4><%= tasks.hard.title %></h4>
-            <p class="subtitle"><%= tasks.hard.subtitle %></p>
-            <p><%= tasks.hard.learning_goals %></p>
-            <a href="/tasks/hard" class="btn">Vis oppgave</a>
-        </div>
-    </div>
-</section>
+    </section>
+    <%- include('partials/footer') %>
+
+
