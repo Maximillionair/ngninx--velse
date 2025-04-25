@@ -1,5 +1,5 @@
 const Task = require('../models/task');
-const config = require('../../config/config');
+const config = require('../config/config');
 
 exports.getIndex = (req, res) => {
   const tasks = Task.getAllTasks();

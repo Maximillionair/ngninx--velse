@@ -1,5 +1,5 @@
 const Task = require('../models/task');
-const config = require('../../config/config');
+const config = require('../config/config');
 
 exports.getTaskByDifficulty = (req, res) => {
   const difficulty = req.params.difficulty;
