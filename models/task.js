@@ -46,124 +46,82 @@ class Task {
           `
         },
         'medium': {
-          'title': 'Docker-containerisering av Node.js webapplikasjon',
+          'title': 'Node.js-applikasjon med MVC-struktur',
           'subtitle': 'Middels vanskelighetsgrad',
-          'learning_goals': 'Lære å containerisere en Node.js webapplikasjon ved hjelp av Docker',
-          'description': 'I denne oppgaven skal du opprette en Dockerfile for en Node.js webapplikasjon, bygge et Docker-image og kjøre containeren. Du skal også konfigurere container-nettverk og volumer for persistente data.',
-          'purpose': 'Hensikten er å forstå hvordan moderne applikasjoner kan containeriseres for konsistent utrulling på ulike miljøer.',
-          'learning_outcome': 'Du vil lære hvordan Docker kan brukes til å pakke applikasjoner med alle avhengigheter og kjøre dem isolert og portabelt.',
-          'personal_learning': 'Gjennom å lage oppgaven har jeg fått repetert beste praksis for Docker-containerisering og spesielt sikre Docker bilder.',
+          'learning_goals': 'Forstå og implementere MVC-struktur i en Express-applikasjon med dynamisk innhold',
+          'description': 'I denne oppgaven skal du lage en liten Node.js-applikasjon med Express, EJS for visning, og bruke en tydelig skille mellom Model, View og Controller.',
+          'purpose': 'Hensikten er å få praktisk erfaring med hvordan man bygger organiserte og skalerbare webapplikasjoner med MVC-pattern.',
+          'learning_outcome': 'Du vil lære hvordan strukturert kodestruktur gjør det enklere å utvide og vedlikeholde kode, og hvordan data flyter gjennom appen fra model til view.',
+          'personal_learning': 'Jeg har lært hvor mye klarere og ryddigere applikasjoner blir når man følger MVC-prinsippene.',
           'criteria': [
-            '1 poeng: Grunnleggende Dockerfile som bygger',
-            '2 poeng: Containeren kjører webapplikasjonen',
-            '3 poeng: Konfigurert volum for persistente data',
-            '4 poeng: Konfigurert nettverk og portvideresending',
-            '5 poeng: Optimalisert Docker-image med flertrinns bygging'
+            '1 poeng: Opprettet riktig mappestruktur (models, views, controllers)',
+            '2 poeng: Dynamisk visning med EJS',
+            '3 poeng: Riktig bruk av ruter og controller-metoder',
+            '4 poeng: Bruk av enkle modeller til å hente eller lagre data',
+            '5 poeng: Applikasjonen fungerer fullstendig og er lett å forstå'
           ],
           'content': `
-            <h4>Oppgavebeskrivelse: Dockerisering av Node.js applikasjon</h4>
-            
-            <p>Du har en enkel Node.js Express-applikasjon som skal containeriseres med Docker. Applikasjonen har følgende filstruktur:</p>
-            
-            <pre>myapp/
-  ├── app.js
-  ├── package.json
-  ├── package-lock.json
-  ├── public/
-  │   └── style.css
-  └── views/
-      └── index.ejs</pre>
-            
-            <h4>Del 1: Grunnleggende Dockerfile</h4>
+            <h4>Del 1: Oppsett av prosjektstruktur</h4>
             <ol>
-              <li>Opprett en Dockerfile i rotmappen til applikasjonen</li>
-              <li>Velg et passende base-image for Node.js applikasjonen</li>
-              <li>Konfigurer arbeidsmappen i containeren</li>
-              <li>Kopier package.json og package-lock.json</li>
-              <li>Kjør npm install for å installere avhengigheter</li>
-              <li>Kopier resten av applikasjonsfilene</li>
-              <li>Angi kommandoen for å starte applikasjonen</li>
-              <li>Eksponere riktig port</li>
+              <li>Lag en ny mappe og initialiser prosjektet med <code>npm init</code></li>
+              <li>Installer <code>express</code> og <code>ejs</code></li>
+              <li>Lag mappene <code>models</code>, <code>views</code>, og <code>controllers</code></li>
+              <li>Lag en enkel routing-fil (f.eks. <code>routes.js</code>) og koble til controller</li>
             </ol>
-            
-            <h4>Del 2: Bygge og kjøre containeren</h4>
+        
+            <h4>Del 2: Dynamiske visninger med EJS</h4>
             <ol>
-              <li>Bygg Docker-image med et passende navn og tag</li>
-              <li>Kjør containeren med riktig port-mapping for å få tilgang til applikasjonen</li>
-              <li>Verifiser at applikasjonen kjører ved å besøke den i nettleseren</li>
+              <li>Lag en <code>views/home.ejs</code> som henter data fra controller</li>
+              <li>Lag en layout hvor header og footer inkluderes som partials</li>
+              <li>Vis dynamisk informasjon fra modellen i EJS</li>
             </ol>
-            
-            <h4>Del 3: Nettverk og volumer</h4>
+        
+            <h4>Del 3: Controllers og Models</h4>
             <ol>
-              <li>Opprett et Docker-volum for persistente data</li>
-              <li>Monter volumet i containeren for å lagre applikasjonsdata</li>
-              <li>Konfigurer et Docker-nettverk for kommunikasjon mellom flere containere</li>
-              <li>Kjør containeren på det nye nettverket</li>
-            </ol>
-            
-            <h4>Del 4: Optimalisering</h4>
-            <ol>
-              <li>Forbedre Dockerfile med flertrinns bygging (multi-stage build)</li>
-              <li>Implementer beste praksis for sikkerhet (kjøre som ikke-root bruker)</li>
-              <li>Optimaliser image-størrelsen ved å fjerne unødvendige filer</li>
-              <li>Implementer Docker Compose for enklere orkestrering</li>
+              <li>Lag en enkel model som returnerer en liste med oppgaver (hardkodet)</li>
+              <li>Lag en controller som henter data fra modellen og sender det til view</li>
+              <li>Legg til en ekstra side for å vise detaljer om en spesifikk oppgave</li>
             </ol>
           `
         },
         'hard': {
-          'title': 'CI/CD Pipeline for automatisert testing og utrulling av Node.js applikasjon',
+          'title': 'Bygg et dynamisk ticketsystem i Node.js',
           'subtitle': 'Vanskelig vanskelighetsgrad',
-          'learning_goals': 'Implementere en komplett CI/CD-løsning for automatisert testing og utrulling av en Node.js applikasjon',
-          'description': 'I denne oppgaven skal du sette opp en komplett CI/CD-pipeline med GitHub Actions eller GitLab CI. Pipelinen skal automatisere testing, bygge Docker-images, og rulle ut applikasjonen til en testserver når kode pushes til repository.',
-          'purpose': 'Hensikten er å forstå moderne utviklingsprosesser som sikrer kontinuerlig integrasjon og leveranse av kvalitetssikret kode.',
-          'learning_outcome': 'Du vil lære hvordan automatiserte pipelines kan støtte utviklings- og driftsprosesser ved å eliminere manuelle feil og sikre konsistente leveranser.',
-          'personal_learning': 'Gjennom å lage denne oppgaven har jeg fordypet meg i de ulike aspektene ved moderne CI/CD, inkludert sikkerhetsscanning og infrastruktur som kode.',
+          'learning_goals': 'Lage et funksjonelt ticketsystem med full CRUD-funksjonalitet, ved hjelp av Express, EJS og enkle datamodeller.',
+          'description': 'Du skal lage et system der brukere kan sende inn supportsaker (tickets), og disse kan vises, redigeres og slettes. Bruk EJS for frontend, og oppbevar data i minne (array eller JSON-fil).',
+          'purpose': 'Hensikten er å forstå hvordan man bygger en dynamisk og interaktiv applikasjon med flere ruter, brukerhandlinger og dataflyt.',
+          'learning_outcome': 'Du vil lære hvordan man håndterer skjemaer, viser dynamiske lister, redigerer innhold og oppdaterer visninger basert på brukerinput.',
+          'personal_learning': 'Å bygge et helt system fra bunnen av gir en dypere forståelse for samspill mellom frontend og backend.',
           'criteria': [
-            '1 poeng: Grunnleggende CI/CD-konfigurasjon',
-            '2 poeng: Automatiserte tester kjører ved push',
-            '3 poeng: Docker-image bygges og pushes til registry',
-            '4 poeng: Automatisk utrulling til test-miljø',
-            '5 poeng: Implementert sikkerhetstesting og staging/prod miljøer med godkjenning før produksjonsutrulling'
+            '1 poeng: Opprette tickets med et skjema',
+            '2 poeng: Vise en liste over alle tickets',
+            '3 poeng: Kunne vise detaljer om én ticket',
+            '4 poeng: Kunne redigere og slette tickets',
+            '5 poeng: God bruk av EJS, riktig datalagring og ryddig mappestruktur (MVC)'
           ],
           'content': `
-            <h4>Oppgavebeskrivelse: CI/CD Pipeline for Node.js applikasjon</h4>
-            
-            <p>I denne oppgaven skal du implementere en komplett CI/CD-pipeline for en Node.js applikasjon med GitHub Actions eller GitLab CI. Målet er å automatisere hele prosessen fra kodeendring til utrulling, inkludert testing og kvalitetssikring.</p>
-            
-            <h4>Del 1: Oppsett av repository</h4>
+            <h4>Del 1: Oppsett av prosjekt</h4>
             <ol>
-              <li>Opprett et GitHub eller GitLab repository for en enkel Node.js Express-applikasjon</li>
-              <li>Skriv grunnleggende tester for applikasjonen med Jest eller Mocha</li>
-              <li>Implementer linting med ESLint for kodekvalitet</li>
-              <li>Opprett en Dockerfile for å containerisere applikasjonen</li>
+              <li>Initialiser prosjektet og installer <code>express</code> og <code>ejs</code></li>
+              <li>Lag en <code>models/ticket.js</code> med array-baserte tickets (ID, tittel, beskrivelse, status)</li>
+              <li>Lag en controller med metoder for <code>listTickets()</code>, <code>getTicket(id)</code>, <code>createTicket()</code>, <code>updateTicket()</code>, <code>deleteTicket()</code></li>
             </ol>
-            
-            <h4>Del 2: Konfigurasjon av CI-pipeline</h4>
+        
+            <h4>Del 2: Lag views</h4>
             <ol>
-              <li>Opprett en workflow-fil (.github/workflows/ci.yml for GitHub Actions eller .gitlab-ci.yml for GitLab)</li>
-              <li>Konfigurer automatisk kjøring av linting</li>
-              <li>Konfigurer automatisk kjøring av tester</li>
-              <li>Konfigurer byggetrinn for applikasjonen</li>
-              <li>Oppsett av Docker-image bygging</li>
+              <li>Lag en EJS-side for å vise alle tickets (<code>tickets/index.ejs</code>)</li>
+              <li>Lag et skjema for å opprette ny ticket</li>
+              <li>Lag en detaljside for én ticket</li>
+              <li>Legg til knapper/lenker for redigering og sletting</li>
             </ol>
-            
-            <h4>Del 3: Konfigurasjon av CD-pipeline</h4>
+        
+            <h4>Del 3: Dynamisk funksjonalitet</h4>
             <ol>
-              <li>Konfigurer pushing av Docker-image til et registry (DockerHub, GitHub Packages eller GitLab Registry)</li>
-              <li>Sett opp en testserver (kan være lokal VM eller skytjeneste)</li>
-              <li>Konfigurer automatisk utrulling til testserver ved vellykkede tester</li>
-              <li>Implementer en enkel metode for å verifisere at utrullingen var vellykket</li>
+              <li>Bruk POST/GET for å håndtere skjema og actions</li>
+              <li>Implementer redigering med preutfylt skjema</li>
+              <li>Lag et slettingssystem (bekreftelse + sletting)</li>
             </ol>
-            
-            <h4>Del 4: Avanserte funksjoner</h4>
-            <ol>
-              <li>Implementer branch-basert workflow (f.eks. dev, staging, production)</li>
-              <li>Konfigurer sikkerhetsskanning av kode og avhengigheter</li>
-              <li>Implementer automatisert versjonskontroll og tagging</li>
-              <li>Konfigurer manuell godkjenning for produksjonsutrulling</li>
-              <li>Implementer rollback-mulighet ved feil</li>
-            </ol>
-          `
+          `       
         }
       };
     }
