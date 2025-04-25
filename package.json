@@ -3,10 +3,6 @@
     "version": "1.0.0",
     "description": "En statisk nettside for oppgaver med ulike vanskelighetsgrader",
     "main": "app.js",
-    "scripts": {
-      "start": "node app.js",
-      "dev": "nodemon app.js"
-    },
     "author": "",
     "license": "ISC",
     "dependencies": {
