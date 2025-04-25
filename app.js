@@ -11,14 +11,14 @@ app.use(morgan('dev'));
 
 // Set view engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'app/views'));
+app.set('views', path.join(__dirname, '/views'));
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use('/', require('./routes/homeRoutes'));
-app.use('/tasks', require('./routes/taskRoutes'));
+app.use('/', require('./routes/homeroutes'));
+app.use('/tasks', require('./routes/taskroutes'));
 
 // Handle 404
 app.use((req, res) => {

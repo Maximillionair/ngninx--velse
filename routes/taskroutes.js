@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const taskController = require('../app/controllers/taskController');
+const taskController = require('../controllers/taskcontroller');
 
 router.get('/:difficulty', taskController.getTaskByDifficulty);
 
