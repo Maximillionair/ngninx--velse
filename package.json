@@ -16,5 +16,9 @@
     },
     "devDependencies": {
       "nodemon": "^3.0.1"
+    },
+    "scripts": {
+      "start": "nodemon server.js",
+      "git": "git add . && git commit -m 'update' && git push origin main"
     }
   }
